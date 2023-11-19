@@ -44,6 +44,15 @@ body{
     background:  linear-gradient(96deg, #ac6115 0%, #9E7a19 100%);
 }
 
+.button:disabled{
+    cursor: not-allowed;
+    color: gray;
+    background:   #343434 ;
+}
+
+
+
+
 .common-title{
     text-align: center;
     font-size: 64px;
