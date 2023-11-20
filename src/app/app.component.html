@@ -86,7 +86,7 @@
       <!-- 1-1 -->
       <div class="products-item" *ngFor="let product of productsData">
         <div class="products-item-img">
-          <img src="../assets/img/{{product.image}}" alt="burger"/>
+          <img src="{{product.image}}" alt="burger"/>
         </div>
         <div class="products-item-title">{{product.title}}</div>
         <div class="products-item-text">{{product.text}}
@@ -131,15 +131,15 @@
       </div>
       <div class="order-form-inputs" [formGroup]="form">
         <div class="order-form-input" [class]="{'error': form.get('order')?.invalid && (form.get('order')?.dirty || form.get('order')?.touched) }">
-          <input type="text" placeholder="Выберите товар в списке" id="burger" formControlName="order" readonly>
+          <input type="text" placeholder="Выберите товар в списке" id="burger" formControlName="order" readonly autocomplete="off">
         </div>
         <div class="order-form-input" [class]="{'error': form.get('name')?.invalid && (form.get('name')?.dirty || form.get('name')?.touched) }">
-          <input type="text" placeholder="Ваше имя" id="name" formControlName="name">
+          <input type="text" placeholder="Ваше имя" id="name" formControlName="name" autocomplete="off">
         </div>
         <div class="order-form-input" [class]="{'error': form.get('phone')?.invalid && (form.get('phone')?.dirty || form.get('phone')?.touched) }">
-          <input type="text" placeholder="Ваш телефон" id="phone" formControlName="phone">
+          <input type="text" placeholder="Ваш телефон" id="phone" formControlName="phone" autocomplete="off">
         </div>
-        <button class="button" id="order-action" (click)="confirmOrder()" [disabled] ="!form.valid">Оформить заказ</button>
+        <button class="button" id="order-action" (click)="confirmOrder()" [disabled]="!form.valid">Оформить заказ</button>
       </div>
     </div>
   </div>
